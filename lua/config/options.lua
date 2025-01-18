@@ -8,4 +8,3 @@ vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a T
 vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 vim.opt.hidden = false
-vim.api.nvim_set_hl(0, 'Variable', { italic = true })
