@@ -8,7 +8,7 @@ return {
 			enable_cmp_source = vim.g.ai_cmp,
 			virtual_text = {
 				-- enabled = not vim.g.ai_cmp,
-				enabled = true,
+				enabled = false,
 				idle_delay = 50,
 				key_bindings = {
 					accept = false, -- handled by nvim-cmp / blink.cmp
