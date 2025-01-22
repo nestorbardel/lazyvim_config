@@ -15,7 +15,6 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
-
     local has_words_before = function()
       unpack = unpack or table.unpack
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -23,6 +22,7 @@ return {
     end
 
     cmp.setup({
+      auto_brackets = {}, -- configure any filetype to auto add brackets
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
@@ -89,18 +89,19 @@ return {
         { name = "nvim_lsp" },
         { name = "luasnip" },
       }),
-      window = {
-        completion = {
-          winhighlight = "Normal:Float,FloatBorder:FloatBorder,Search:None",
-          col_offset = 1,
-          side_padding = 0,
-          border = "rounded",
-        },
-        documentation = {
-          winhighlight = "Normal:Float,FloatBorder:FloatBorder,Search:None",
-          border = "rounded",
-        },
-      },
+      -- window = {
+        -- completion = {
+        --   winhighlight = "Normal:Float,FloatBorder:FloatBorder,Search:None",
+        --   col_offset = 1,
+        --   side_padding = 0,
+          -- border = "rounded",
+
+        -- },
+        -- documentation = {
+        --   winhighlight = "Normal:Float,FloatBorder:FloatBorder,Search:None",
+        --   border = "rounded",
+        -- },
+      -- },
       formatting = {
         fields = { "abbr", "kind" },
         format = function(entry, vim_item)
@@ -140,7 +141,7 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
     require("luasnip").filetype_extend("svelte", { "html" })
     require("luasnip").filetype_extend("javascriptreact", { "html" })
-    -- require("luasnip").filetype_extend("typescriptreact", { "html" })
+    require("luasnip").filetype_extend("typescriptreact", { "html" })
 
     -- The line beneath this is called `modeline`. See `:help modeline`
     -- vim: ts=2 sts=2 sw=2 et
