@@ -14,6 +14,7 @@ vim.o.guifont = "JetBrainsMono Nerd Font:h10.3"
 vim.g.neovide_cursor_trail_size = 0.8
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
 vim.g.neovide_cursor_animate_in_insert_mode = true
+vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
 -- vim.g.neovide_cursor_vfx_mode = "sonicboom"
 -- vim.o.guifont = "MartianMono Nerd Font Mono:h10.5"
 -- vim.g.neovide_cursor_animation_length = 0.13
