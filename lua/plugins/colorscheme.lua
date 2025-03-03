@@ -6,7 +6,7 @@ return {
 			-- Lua
 			require("onedark").setup({
 				-- Main options --
-				style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+				style = "warmer", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 				transparent = false, -- Show/hide background
 				term_colors = true, -- Change terminal color as per the selected theme style
 				ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -21,7 +21,7 @@ return {
 				-- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
 				code_style = {
 					comments = "italic",
-					keywords = "none",
+					keywords = "bold",
 					functions = "bold",
 					strings = "none",
 					variables = "bold",
@@ -86,10 +86,49 @@ return {
 		end,
 	},
 	{
+		"scottmckendry/cyberdream.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("cyberdream").setup({
+				-- Set light or dark variant
+				variant = "default", -- use "light" for the light variant. Also accepts "auto" to set dark or light colors based on the current value of `vim.o.background`
+
+				-- Enable transparent background
+				transparent = true,
+
+				-- Reduce the overall saturation of colours for a more muted look
+				saturation = 1,
+			}) -- accepts a value between 0 and 1. 0 will be fully desaturated (greyscale) and 1 will be the full color (default)
+		end,
+	},
+	{
+		"uloco/bluloco.nvim",
+		lazy = false,
+		priority = 1000,
+		dependencies = { "rktjmp/lush.nvim" },
+		config = function()
+			require("bluloco").setup({
+				style = "dark", -- "auto" | "dark" | "light"
+				transparent = true,
+				italics = false,
+				terminal = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
+				guicursor = true,
+			})
+
+			vim.opt.termguicolors = true
+			-- vim.cmd("colorscheme bluloco")
+			-- your optional config goes here, see below.
+		end,
+	},
+	{
 		"LazyVim/LazyVim",
 		opts = {
 			-- colorscheme = "nightfox"
-			colorscheme = "eldritch",
+			-- colorscheme = "eldritch",
+			-- colorscheme = "cyberdream",
+			-- colorscheme = "bluloco",
+			colorscheme = "onedark",
 		},
 	},
 }
