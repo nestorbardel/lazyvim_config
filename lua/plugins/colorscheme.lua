@@ -6,7 +6,7 @@ return {
 			-- Lua
 			require("onedark").setup({
 				-- Main options --
-				style = "warmer", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+				style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 				transparent = false, -- Show/hide background
 				term_colors = true, -- Change terminal color as per the selected theme style
 				ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -35,6 +35,38 @@ return {
 				-- Custom Highlights --
 				colors = {}, -- Override default colors
 				highlights = {}, -- Override highlight groups
+				colors = {
+					qtt_yellow = "#E5C07B",
+					qtt_gray = "#ABB2BF",
+                    qtt_violet = "#C678DD",
+				},
+				highlights = {
+					["@punctuation.delimiter"] = { fg = "$qtt_gray", fmt = "bold"},
+					["@punctuation.bracket"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    ["@punctuation.braces"] = { fg = "$qtt_violet", fmt = 'bold' },
+                    -- ["@punctuation.operator"] = { fg = "$qtt_gray", fmt = 'bold' },
+                    -- ["@punctuation.separator"] = { fg = "$qtt_gray", fmt = 'bold' },
+                    -- ["@punctuation.accessor"] = { fg = "$qtt_gray", fmt = 'bold' },
+                    -- ["@punctuation.other"] = { fg = "$qtt_gray", fmt = 'bold' },
+                    -- ["@constant"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.other"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.character"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.character.escape"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.numeric"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.boolean"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.null"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.other"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.regexp"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.symbol"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.key"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.key.special"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@constant.other"] = { fg = "$qtt_yellow", fmt = 'bold' },
+                    -- ["@variable"] = { fg = "$qtt_gray", fmt = 'bold' },
+                    -- ["@variable.other"] = { fg = "$qtt_gray", fmt = 'bold' },
+                    -- ["@variable.parameter"] = { fg = "$qtt_gray", fmt = 'bold' },
+                    -- ["@variable.language"] = { fg = "$qtt_gray", fmt = 'bold' },
+                    -- ["@variable.language.special"] = { fg = "$qtt_gray", fmt = 'bold' },
+				},
 
 				-- Plugins Config --
 				diagnostics = {
