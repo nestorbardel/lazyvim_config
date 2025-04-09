@@ -10,14 +10,14 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 vim.opt.hidden = false
 -- vim.g.neovide_transparency = 0.97
 -- vim.g.neovide_normal_opacity = 0.97
-vim.o.guifont = "JetBrainsMono Nerd Font:h10"
+vim.o.guifont = "JetBrainsMono Nerd Font:h13"
 vim.g.neovide_cursor_trail_size = 0.8
-vim.g.neovide_cursor_vfx_mode = "pixiedust"
+-- vim.g.neovide_cursor_vfx_mode = "pixiedust"
 vim.g.neovide_cursor_animate_in_insert_mode = true
 vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
--- vim.keymap.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
--- vim.keymap.set({ "n", "v" }, "<M-a>", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
--- vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<M-a>", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
 vim.o.completeopt = 'menu,menuone,noinsert,preview,popup'
 -- Expand 'cc' into 'CodeCompanion' in the command line
 -- vim.cmd([[cab cc CodeCompanion]])
